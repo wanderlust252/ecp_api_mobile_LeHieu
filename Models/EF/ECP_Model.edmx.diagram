@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4266671fce4c4a5f9cf4f7f808244b6c" Name="Diagram1">
+        <EntityTypeShape EntityType="ECP_Model.AspNetRole" Width="1.5" PointX="17.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.AspNetUserClaim" Width="1.5" PointX="22.25" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.AspNetUserLogin" Width="1.5" PointX="22.25" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.AspNetUser" Width="1.5" PointX="20" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.Asset" Width="1.5" PointX="11.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.CCDC_TrangThai" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.chatTinNhan" Width="1.5" PointX="13.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.HangSanXuat" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.KiemSoatDienThoai" Width="1.5" PointX="20" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.LoaiThietBi" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.Log" Width="1.5" PointX="7.75" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.MenuMaster" Width="1.5" PointX="9.75" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.Message" Width="1.5" PointX="7.75" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.NhomThietBi" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.NuocSanXuat" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.PhieuLamViec_Images" Width="1.5" PointX="5.25" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.PhieuLamViec_Images_His" Width="1.5" PointX="13.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.plv_LoaiPhieu" Width="1.5" PointX="0.75" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.plv_PhieuCongTac" Width="1.5" PointX="3" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.plv_PhieuCongTac_His" Width="1.5" PointX="9.75" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.plv_PhieuCT_NhanVien" Width="1.5" PointX="15.25" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.plv_TaiLieu" Width="1.5" PointX="5.25" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.plv_TaiLieu_His" Width="1.5" PointX="15.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.plv_ThuocTinhPhien" Width="1.5" PointX="13" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.plv_TinhChatPhien" Width="1.5" PointX="7.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.plv_TrangThaiPhien" Width="1.5" PointX="7.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.plv_TrangThaiPhieu" Width="1.5" PointX="0.75" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.S_THANG_LVIEC" Width="1.5" PointX="11.75" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.sc_LoaiPhanTu" Width="1.5" PointX="17.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.sc_LoaiSuCo" Width="1.5" PointX="17.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.sc_PhanTuDien" Width="1.5" PointX="20" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.sc_SuCoPTD" Width="1.5" PointX="22.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.sc_TaiLieu" Width="1.5" PointX="22.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.sc_TaiNanSuCo" Width="1.5" PointX="20" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.SoTheoDoiCCDCAT" Width="1.5" PointX="7.5" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.SoTheoDoiCCDCAT_TaiLieu" Width="1.5" PointX="9.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.SystemConfig" Width="1.5" PointX="13.75" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tbl_NhanVien_PhienLamViec" Width="1.5" PointX="5.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblBaoCao" Width="1.5" PointX="22.75" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblBaoCaoCuoiNgay" Width="1.5" PointX="17.75" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblBienBanKiemTra" Width="1.5" PointX="25" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblChiTietBaoCao" Width="1.5" PointX="25" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblChiTietBaoCaoCuoiNgay" Width="1.5" PointX="20" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblComment" Width="1.5" PointX="12.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblComment_His" Width="1.5" PointX="22.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblComment_Image" Width="1.5" PointX="5.25" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblComment_Image_His" Width="1.5" PointX="24.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblDonVi" Width="1.5" PointX="0.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblGroupImage" Width="1.5" PointX="24.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblImage" Width="1.5" PointX="3" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblImage_His" Width="1.5" PointX="24.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblLichLamViec" Width="1.5" PointX="24.75" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblLoaiBaoCao" Width="1.5" PointX="26.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblNhanVien" Width="1.5" PointX="13" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblPhienLamViec" Width="1.5" PointX="10" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblPhienLamViec_ChinhSua" Width="1.5" PointX="26.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblPhienLamViec_His" Width="1.5" PointX="26.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblPhienLamViec_NhatKy" Width="1.5" PointX="26.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblPhienLamViec_TheoDoi" Width="1.5" PointX="15.25" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblPhienLamViec_ThuocTinh" Width="1.5" PointX="15.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblPhienLamViec_ThuocTinh_His" Width="1.5" PointX="7.75" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblPhongBan" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblTagImageUser" Width="1.5" PointX="9.75" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblTag" Width="1.5" PointX="11.75" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.tblVaiTroPhienLamViec" Width="1.5" PointX="13.75" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.ThietBiATLD" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECP_Model.FacilitySite" Width="1.5" PointX="27.75" PointY="20.125" IsExpanded="true" />
+        <AssociationConnector Association="ECP_Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_ThietBiATLD_CCDC_TrangThai" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_LoaiThietBi_HangSanXuat" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_ThietBiATLD_HangSanXuat" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_KiemSoatDienThoai_tblBaoCaoCuoiNgay" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_LoaiThietBi_NhomThietBi" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_LoaiThietBi_NuocSanXuat" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_ThietBiATLD_LoaiThietBi" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_ThietBiATLD_NhomThietBi" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_ThietBiATLD_NuocSanXuat" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_PhieuLamViec_Images_plv_PhieuCongTac" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_PhieuLamViec_Images_tblImage" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_plv_PhieuCongTac_plv_LoaiPhieu" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_plv_PhieuCongTac_plv_TrangThaiPhieu" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_plv_PhieuCT_NhanVien_plv_PhieuCongTac" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_plv_TaiLieu_plv_PhieuCongTac1" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_plv_PhieuCT_NhanVien_tblNhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_tblPhienLamViec_ThuocTinh_plv_ThuocTinhPhien" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_tblPhienLamViec_plv_TinhChatPhien" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_tblPhienLamViec_plv_TrangThaiPhien" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_sc_PhanTuDien_sc_LoaiPhanTu" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_sc_TaiNanSuCo_sc_LoaiSuCo" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_sc_SuCoPTD_sc_PhanTuDien" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_sc_SuCoPTD_sc_TaiNanSuCo" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_sc_TaiLieu_sc_TaiNanSuCo" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_SoTheoDoiCCDCAT_TaiLieu_SoTheoDoiCCDCAT" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_SoTheoDoiCCDCAT_ThietBiATLD" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_tblBienBanKiemTra_tblBaoCao" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_tblChiTietBaoCao_tblBaoCao" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_tblChiTietBaoCaoCuoiNgay_tblBaoCaoCuoiNgay" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_tblComment_tblPhienLamViec" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_tblComment_Image_tblComment_Image" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_tblPhongBan_tblDonVi" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_tblNhanVien_tblPhongBan" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_tblPhienLamViec_TheoDoi_tblNhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_tblPhienLamViec_TheoDoi_tblPhienLamViec" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_tblPhienLamViec_ThuocTinh_tblPhienLamViec2" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.FK_ThietBiATLD_tblPhongBan" ManuallyRouted="false" />
+        <AssociationConnector Association="ECP_Model.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ECP_Model.tblDevice" Width="1.5" PointX="27.375" PointY="23.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

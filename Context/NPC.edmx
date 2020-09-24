@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ECP_PHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="256" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" />
+          <Property Name="TwoFactorEnabled" Type="bit" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" />
+          <Property Name="AccessFailedCount" Type="int" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="MA_DVIQLY" Type="varchar" MaxLength="12" />
+          <Property Name="MA_PBAN" Type="int" />
+          <Property Name="ChucDanh" Type="nvarchar" MaxLength="256" />
+          <Property Name="AnhDaiDien" Type="nvarchar" MaxLength="400" />
+        </EntityType>
+        <EntityType Name="NPCSystemConfigs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UniqueKey" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" />
+          <Property Name="Unit" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="20" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_Company">
+          <Key>
+            <PropertyRef Name="MA_DVIQLY" />
+          </Key>
+          <Property Name="MA_DVIQLY" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="TEN_DVIQLY" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="MA_DVICTREN" Type="varchar" MaxLength="12" />
+          <Property Name="CAP_DVI" Type="int" />
+          <Property Name="DIA_CHI" Type="nvarchar" MaxLength="200" />
+          <Property Name="DIEN_THOAI" Type="nvarchar" MaxLength="20" />
+          <Property Name="DTHOAI_KDOANH" Type="nvarchar" MaxLength="20" />
+          <Property Name="DTHOAI_NONG" Type="nvarchar" MaxLength="20" />
+          <Property Name="DTHOAI_TRUC" Type="nvarchar" MaxLength="20" />
+          <Property Name="FAX" Type="nvarchar" MaxLength="13" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="300" />
+          <Property Name="MA_STHUE" Type="varchar" MaxLength="17" />
+          <Property Name="DAI_DIEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="CHUC_VU" Type="nvarchar" MaxLength="50" />
+          <Property Name="SO_UQUYEN" Type="nvarchar" MaxLength="30" />
+          <Property Name="NGAY_UQUYEN" Type="date" />
+          <Property Name="TEN_DVIUQ" Type="nvarchar" MaxLength="50" />
+          <Property Name="DCHI_DVIUQ" Type="nvarchar" MaxLength="100" />
+          <Property Name="CVU_UQUYEN" Type="nvarchar" MaxLength="100" />
+          <Property Name="TNGUOI_UQUYEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="TEN_TINH" Type="nvarchar" MaxLength="100" />
+          <Property Name="WEBSITE" Type="nvarchar" MaxLength="300" />
+          <Property Name="SERVERNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="DATABASENAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="DBUSERNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="DBPASSWORD" Type="nvarchar" MaxLength="50" />
+          <Property Name="SERVERNAMEIMAGE" Type="nvarchar" MaxLength="50" />
+          <Property Name="LINKAPI" Type="nvarchar" MaxLength="500" />
+          <Property Name="SERVERFILEUPLOAD" Type="nvarchar" MaxLength="50" />
+          <Property Name="SERVERNAMEIMAGE_PUB" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_TaiLieu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenTaiLieu" Type="nvarchar" MaxLength="250" />
+          <Property Name="Url" Type="nvarchar" MaxLength="500" />
+          <Property Name="NgayTao" Type="datetime" />
+          <Property Name="NguoiTao" Type="nvarchar" MaxLength="256" />
+          <Property Name="NgayCapNhat" Type="datetime" />
+          <Property Name="NguoiCapNhat" Type="nvarchar" MaxLength="256" />
+          <Property Name="MA_DVIQLY" Type="varchar" MaxLength="6" />
+          <Property Name="LoaiTaiLieu" Type="int" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="IsPublic" Type="bit" />
+        </EntityType>
+        <Association Name="FK_AspNetUsers_tbl_Company">
+          <End Role="tbl_Company" Type="Self.tbl_Company" Multiplicity="0..1" />
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Company">
+              <PropertyRef Name="MA_DVIQLY" />
+            </Principal>
+            <Dependent Role="AspNetUsers">
+              <PropertyRef Name="MA_DVIQLY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ECP_PHModelStoreContainer">
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NPCSystemConfigs" EntityType="Self.NPCSystemConfigs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Company" EntityType="Self.tbl_Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_TaiLieu" EntityType="Self.tbl_TaiLieu" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AspNetUsers_tbl_Company" Association="Self.FK_AspNetUsers_tbl_Company">
+            <End Role="tbl_Company" EntitySet="tbl_Company" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ECP_PHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ECP_NPCEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_Company" EntityType="ECP_PHModel.tbl_Company" />
+          <EntitySet Name="NPCSystemConfigs" EntityType="ECP_PHModel.NPCSystemConfig" />
+          <EntitySet Name="tbl_TaiLieu" EntityType="ECP_PHModel.tbl_TaiLieu" />
+          <EntitySet Name="AspNetUsers" EntityType="ECP_PHModel.AspNetUser" />
+          <AssociationSet Name="FK_AspNetUsers_tbl_Company" Association="ECP_PHModel.FK_AspNetUsers_tbl_Company">
+            <End Role="tbl_Company" EntitySet="tbl_Company" />
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tbl_Company">
+          <Key>
+            <PropertyRef Name="MA_DVIQLY" />
+          </Key>
+          <Property Name="MA_DVIQLY" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="TEN_DVIQLY" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MA_DVICTREN" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="CAP_DVI" Type="Int32" />
+          <Property Name="DIA_CHI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DIEN_THOAI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DTHOAI_KDOANH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DTHOAI_NONG" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DTHOAI_TRUC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FAX" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="MA_STHUE" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="DAI_DIEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CHUC_VU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SO_UQUYEN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY_UQUYEN" Type="DateTime" Precision="0" />
+          <Property Name="TEN_DVIUQ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DCHI_DVIUQ" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CVU_UQUYEN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TNGUOI_UQUYEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TEN_TINH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="WEBSITE" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="SERVERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DATABASENAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DBUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DBPASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SERVERNAMEIMAGE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LINKAPI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="ECP_PHModel.FK_AspNetUsers_tbl_Company" FromRole="tbl_Company" ToRole="AspNetUser" />
+          <Property Name="SERVERFILEUPLOAD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SERVERNAMEIMAGE_PUB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NPCSystemConfig">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UniqueKey" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbl_TaiLieu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenTaiLieu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NgayTao" Type="DateTime" Precision="3" />
+          <Property Name="NguoiTao" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+          <Property Name="NguoiCapNhat" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="MA_DVIQLY" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="LoaiTaiLieu" Type="Int32" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="IsPublic" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" />
+          <Property Name="PasswordHash" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" />
+          <Property Name="AccessFailedCount" Type="Int32" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="MA_DVIQLY" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="MA_PBAN" Type="Int32" />
+          <Property Name="ChucDanh" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="AnhDaiDien" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_Company" Relationship="ECP_PHModel.FK_AspNetUsers_tbl_Company" FromRole="AspNetUser" ToRole="tbl_Company" />
+        </EntityType>
+        <Association Name="FK_AspNetUsers_tbl_Company">
+          <End Type="ECP_PHModel.tbl_Company" Role="tbl_Company" Multiplicity="0..1" />
+          <End Type="ECP_PHModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Company">
+              <PropertyRef Name="MA_DVIQLY" />
+            </Principal>
+            <Dependent Role="AspNetUser">
+              <PropertyRef Name="MA_DVIQLY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ECP_PHModelStoreContainer" CdmEntityContainer="ECP_NPCEntities">
+          <EntitySetMapping Name="tbl_Company">
+            <EntityTypeMapping TypeName="ECP_PHModel.tbl_Company">
+              <MappingFragment StoreEntitySet="tbl_Company">
+                <ScalarProperty Name="SERVERNAMEIMAGE_PUB" ColumnName="SERVERNAMEIMAGE_PUB" />
+                <ScalarProperty Name="SERVERFILEUPLOAD" ColumnName="SERVERFILEUPLOAD" />
+                <ScalarProperty Name="LINKAPI" ColumnName="LINKAPI" />
+                <ScalarProperty Name="SERVERNAMEIMAGE" ColumnName="SERVERNAMEIMAGE" />
+                <ScalarProperty Name="DBPASSWORD" ColumnName="DBPASSWORD" />
+                <ScalarProperty Name="DBUSERNAME" ColumnName="DBUSERNAME" />
+                <ScalarProperty Name="DATABASENAME" ColumnName="DATABASENAME" />
+                <ScalarProperty Name="SERVERNAME" ColumnName="SERVERNAME" />
+                <ScalarProperty Name="WEBSITE" ColumnName="WEBSITE" />
+                <ScalarProperty Name="TEN_TINH" ColumnName="TEN_TINH" />
+                <ScalarProperty Name="TNGUOI_UQUYEN" ColumnName="TNGUOI_UQUYEN" />
+                <ScalarProperty Name="CVU_UQUYEN" ColumnName="CVU_UQUYEN" />
+                <ScalarProperty Name="DCHI_DVIUQ" ColumnName="DCHI_DVIUQ" />
+                <ScalarProperty Name="TEN_DVIUQ" ColumnName="TEN_DVIUQ" />
+                <ScalarProperty Name="NGAY_UQUYEN" ColumnName="NGAY_UQUYEN" />
+                <ScalarProperty Name="SO_UQUYEN" ColumnName="SO_UQUYEN" />
+                <ScalarProperty Name="CHUC_VU" ColumnName="CHUC_VU" />
+                <ScalarProperty Name="DAI_DIEN" ColumnName="DAI_DIEN" />
+                <ScalarProperty Name="MA_STHUE" ColumnName="MA_STHUE" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="DTHOAI_TRUC" ColumnName="DTHOAI_TRUC" />
+                <ScalarProperty Name="DTHOAI_NONG" ColumnName="DTHOAI_NONG" />
+                <ScalarProperty Name="DTHOAI_KDOANH" ColumnName="DTHOAI_KDOANH" />
+                <ScalarProperty Name="DIEN_THOAI" ColumnName="DIEN_THOAI" />
+                <ScalarProperty Name="DIA_CHI" ColumnName="DIA_CHI" />
+                <ScalarProperty Name="CAP_DVI" ColumnName="CAP_DVI" />
+                <ScalarProperty Name="MA_DVICTREN" ColumnName="MA_DVICTREN" />
+                <ScalarProperty Name="TEN_DVIQLY" ColumnName="TEN_DVIQLY" />
+                <ScalarProperty Name="MA_DVIQLY" ColumnName="MA_DVIQLY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NPCSystemConfigs">
+            <EntityTypeMapping TypeName="ECP_PHModel.NPCSystemConfig">
+              <MappingFragment StoreEntitySet="NPCSystemConfigs">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="UniqueKey" ColumnName="UniqueKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_TaiLieu">
+            <EntityTypeMapping TypeName="ECP_PHModel.tbl_TaiLieu">
+              <MappingFragment StoreEntitySet="tbl_TaiLieu">
+                <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="LoaiTaiLieu" ColumnName="LoaiTaiLieu" />
+                <ScalarProperty Name="MA_DVIQLY" ColumnName="MA_DVIQLY" />
+                <ScalarProperty Name="NguoiCapNhat" ColumnName="NguoiCapNhat" />
+                <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+                <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="TenTaiLieu" ColumnName="TenTaiLieu" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="ECP_PHModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="AnhDaiDien" ColumnName="AnhDaiDien" />
+                <ScalarProperty Name="ChucDanh" ColumnName="ChucDanh" />
+                <ScalarProperty Name="MA_PBAN" ColumnName="MA_PBAN" />
+                <ScalarProperty Name="MA_DVIQLY" ColumnName="MA_DVIQLY" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

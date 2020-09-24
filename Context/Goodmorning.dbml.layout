@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Goodmorning">
+  <DataContextMoniker Name="/GoodmorningDataContext" />
+  <nestedChildShapes>
+    <classShape Id="986df7f8-a8d1-4bf1-9efe-c4fd1c230a53" absoluteBounds="0.75, 0.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/GoodmorningDataContext/tblconfig" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fad826a2-d7bd-4c22-93b6-dd104cfa6e23" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d4451820-9cb4-4253-8c9d-da899ebe234f" absoluteBounds="3.75, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/GoodmorningDataContext/tbluser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c71d3052-58d2-4b27-aede-34529ad09bd6" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="519f4552-8362-4ca7-a8ef-3ba2b7d5210c" absoluteBounds="0.75, 3.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/GoodmorningDataContext/tblTask" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4ea3397c-87f2-463d-a1c1-d79f5e50b802" absoluteBounds="0.765, 4.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
