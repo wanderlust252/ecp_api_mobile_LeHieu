@@ -1575,7 +1575,7 @@ namespace ECPNPC_API.Controllers
         }
 
         [Route("ECP_Login/{username}/{password}/{dbname}")]
-        [HttpGet]
+        [HttpPost]
         public object ECP_Login(string username, string password, string dbname)
         {
             //string connect = @"data source=103.63.109.191\MSSQLSERVER2016;initial catalog=ECP_PA25;persist security info=True;user id=sa;password=Vnittech2018;";
