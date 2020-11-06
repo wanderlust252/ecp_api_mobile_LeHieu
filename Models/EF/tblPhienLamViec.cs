@@ -62,7 +62,8 @@ namespace ECP_WEBAPI.Models.EF
         public Nullable<decimal> ViDo { get; set; }
         public string NguoiKetThuc { get; set; }
         public Nullable<bool> IsEndByWeb { get; set; }
-    
+        public string dbname { get; set; }
+
         public virtual plv_TinhChatPhien plv_TinhChatPhien { get; set; }
         public virtual plv_TrangThaiPhien plv_TrangThaiPhien { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

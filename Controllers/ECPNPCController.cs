@@ -1,4 +1,5 @@
 ﻿using ECP_WEBAPI.Context;
+using ECP_WEBAPI.Models;
 using ECP_WEBAPI.Models.EF;
 using ECPNPC_API.Helper;
 using ECPNPC_API.Models;
@@ -83,7 +84,7 @@ namespace ECPNPC_API.Controllers
             return entityBuilder.ToString();
         }
 
-        [Route("GetPhien/{idphong}/{iddvi}/{idrole}/{tungay}/{denngay}/{tcphien}/{userid}/{dbname}/{page}/{pageSize}")]
+        [Route("GetPhien")]
         [System.Web.Mvc.HttpGet]
         public object GetPhien(int idphong, string iddvi, int idrole, string tungay, string denngay, int tcphien, string userid, string dbname, int page, int pageSize)
         {
@@ -219,9 +220,9 @@ namespace ECPNPC_API.Controllers
             }
         }
 
-        [Route("GetPhienKTVATCT/{idphong}/{iddvi}/{idrole}/{tungay}/{denngay}/{tcphien}/{userid}/{dbname}")]
+        [Route("GetPhienKTVATCT")]
         [System.Web.Mvc.HttpGet]
-        public object GetPhienKTVATCT(int idphong, string iddvi, int idrole, string tungay, string denngay, int tcphien, string userid, string dbname, int page = 0, int pageSize = 500)
+        public object GetPhienKTVATCT(int idphong, string iddvi, int idrole, string tungay, string denngay, int tcphien, string dbname, int page = 0, int pageSize = 500)
         {
             //LayStrConnect(iddvi);
             using (var db = new ECP_PAEntities(GetEntityConnectionString(dbname)))
@@ -833,7 +834,7 @@ namespace ECPNPC_API.Controllers
             }
         }
 
-        [Route("GetNhanVien_PhienLV/{iddvi}/{userid}")]
+        [Route("GetNhanVien_PhienLV")]
         [System.Web.Mvc.HttpGet]
         public object GetNhanVien_PhienLV(string iddvi, string userid, int page = 0, int pageSize = 500)
         {
@@ -902,7 +903,7 @@ namespace ECPNPC_API.Controllers
         //    }
         //}
 
-        [Route("GetPhong/{iddvi}/{dbname}")]
+        [Route("GetPhong")]
         [System.Web.Mvc.HttpGet]
         public object GetPhong(string iddvi, string dbname)
         {
@@ -942,7 +943,7 @@ namespace ECPNPC_API.Controllers
             }
         }
 
-        [Route("GetDvi/{iddvi}/{dbname}")]
+        [Route("GetDvi")]
         [HttpGet]
         public object GetDvi(string iddvi, string dbname)
         {
@@ -1059,7 +1060,7 @@ namespace ECPNPC_API.Controllers
             return Convert.ToBase64String(dst);
         }
 
-        [Route("GetInforUser/{username}/{dbname}")]
+        [Route("GetInforUser")]
         [HttpGet]
         public Object GetInforUser(string username, string dbname)
         {
@@ -1141,7 +1142,7 @@ namespace ECPNPC_API.Controllers
             public int type { get; set; }
         }
 
-        [Route("GetRoleUser/{iduser}/{dbname}")]
+        [Route("GetRoleUser")]
         [HttpGet]
         public object GetRoleUser(string iduser, string dbname)
         {
@@ -1174,7 +1175,7 @@ namespace ECPNPC_API.Controllers
             return x;
         }
 
-        [Route("GetImagePhien/{id_phien_lviec}/{dbname}")]
+        [Route("GetImagePhien")]
         [HttpGet]
         public object GetImagePhien(int id_phien_lviec, string dbname)
         {
@@ -1418,7 +1419,7 @@ namespace ECPNPC_API.Controllers
                     HttpPostedFile file = HttpContext.Current.Request.Files[fileName];
                     if (file.ContentLength > 0)
                     {
-                        string root = HttpContext.Current.Server.MapPath("~/ImagesPLV/" + donvicha + "/Files");
+                        string root = HttpContext.Current.Server.MapPath("~/Files");
                         string directory = "";
                         string pathurl = "";
                         DateTime dt = DateTime.Now;
@@ -1574,7 +1575,7 @@ namespace ECPNPC_API.Controllers
             }
         }
 
-        [Route("ECP_Login/{username}/{password}/{dbname}")]
+        [Route("ECP_Login")]
         [HttpPost]
         public object ECP_Login(string username, string password, string dbname)
         {
@@ -1624,7 +1625,7 @@ namespace ECPNPC_API.Controllers
         }
 
 
-        [Route("LayComment/{id}/{dbname}")]
+        [Route("LayComment")]
         [HttpGet]
         public object LayComment(int id, string dbname)
         {
@@ -1649,20 +1650,20 @@ namespace ECPNPC_API.Controllers
             }
         }
 
-        [Route("insert_taskcmt/{idtask}/{des}/{usercreate}/{dbname}")]
-        [HttpGet]
-        public object insert_taskcmt(int idtask, string des, string usercreate, string dbname)
+        [Route("insert_taskcmt")]
+        [HttpPost]
+        public object insert_taskcmt(BinhLuanViewModel param)
         {
             //LayStrConnect(iddvi);
             try
             {
-                using (var db = new ECP_PAEntities(GetEntityConnectionString(dbname)))
+                using (var db = new ECP_PAEntities(GetEntityConnectionString(param.DBName)))
                 {
                     tblComment i = new tblComment
                     {
-                        PhienLamViecId = idtask,
-                        Username = usercreate,
-                        CommentContent = des,
+                        PhienLamViecId = param.PhienLamViecId,
+                        Username = param.Username,
+                        CommentContent = param.CommentContent,
                         CreateTime = DateTime.Now,
                         Priority = 1,
                         Description = "",
@@ -1698,22 +1699,23 @@ namespace ECPNPC_API.Controllers
             }
         }
 
-        [Route("update_trangthaiphien/{id}/{dbname}")]
-        [HttpGet]
-        public object update_trangthaiphien(int id, string dbname)
+        [Route("update_trangthaiphien")]
+        [HttpPost]
+        public object update_trangthaiphien(tblPhienLamViec param)
         {
             try
             {
-                using (var db = new ECP_PAEntities(GetEntityConnectionString(dbname)))
+                using (var db = new ECP_PAEntities(GetEntityConnectionString(param.dbname)))
                 {
                     var dky = (from i in db.tblPhienLamViecs
-                               where i.Id == id
+                               where i.Id == param.Id
                                select i);
                     if (dky == null) return 0;
                     foreach (var i in dky)
                     {
                         i.TrangThai = 3;
                         i.NgayKetThuc = DateTime.Now;
+                        i.NguoiKetThuc = param.NguoiKetThuc;
                     }
                     db.SaveChanges();
                     return 1;

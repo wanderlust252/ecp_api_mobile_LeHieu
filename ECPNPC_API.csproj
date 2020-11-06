@@ -51,6 +51,9 @@
       <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Dapper, Version=1.60.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Dapper.1.60.6\lib\net451\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -270,6 +273,7 @@
       <DependentUpon>NPC.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CCDCController.cs" />
     <Compile Include="Controllers\ECPNPCController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PhienLamViecController.cs" />
@@ -280,6 +284,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\StringExtensions.cs" />
+    <Compile Include="Models\BinhLuanViewModel.cs" />
+    <Compile Include="Models\CongCuDungCuAnToanModel.cs" />
     <Compile Include="Models\EF\AspNetRole.cs">
       <DependentUpon>ECP_Model.tt</DependentUpon>
     </Compile>
@@ -622,6 +628,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\CCDC\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Project_Readme.html" />
