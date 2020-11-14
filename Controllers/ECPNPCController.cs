@@ -743,7 +743,7 @@ namespace ECPNPC_API.Controllers
             }
         }
 
-        [Route("GetPhienHT/{idphong}/{iddvi}/{idrole}/{tungay}/{denngay}/{userid}/{dbname}")]
+        [Route("GetPhienHT")]
         [System.Web.Mvc.HttpGet]
         public object GetPhienHT(int idphong, string iddvi, int idrole, string tungay, string denngay, string userid, string dbname, int page = 0, int pageSize = 500)
         //(int idphong, string iddvi, int idrole, string tungay, string denngay, int tcphien, string userid)
@@ -902,7 +902,25 @@ namespace ECPNPC_API.Controllers
         //        return kt;
         //    }
         //}
-
+        [Route("GetPhongBanById")]
+        [System.Web.Mvc.HttpGet]
+        public object GetPhong(int phongBanId, string dbname)
+        {
+            using (var db = new ECP_PAEntities(GetEntityConnectionString(dbname)))
+            {
+                var kt = (from i in db.tblPhongBans
+                          where i.Id == phongBanId
+                          select new
+                          {
+                              i.Id,
+                              i.MaDVi,
+                              i.MoTa,
+                              i.TenPhongBan,
+                              i.SDT
+                          }).AsNoTracking().FirstOrDefault();
+                return kt;
+            }
+        }
         [Route("GetPhong")]
         [System.Web.Mvc.HttpGet]
         public object GetPhong(string iddvi, string dbname)
@@ -923,7 +941,7 @@ namespace ECPNPC_API.Controllers
             }
         }
 
-        [Route("GetPhongTV/{iddvi}/{dbname}")]
+        [Route("GetPhongTV")]
         [System.Web.Mvc.HttpGet]
         public object GetPhongTV(string iddvi, string dbname)
         {
@@ -1070,7 +1088,7 @@ namespace ECPNPC_API.Controllers
                           join u in db.AspNetUsers
                           on j.Id equals u.Id
                           where j.Username == username //&& i.PasswordHash == pass
-                          select new { j.TenNhanVien, j.PhongBanId, j.DonViId, j.Id, Role = u.AspNetRoles.FirstOrDefault().Id }).AsNoTracking().ToList();
+                          select new { j.UrlImage,j.TenNhanVien, j.PhongBanId, j.DonViId,j.NgaySinh, j.Id, j.ChucVu,j.DiaChi,j.BacAnToan, Role = u.AspNetRoles.FirstOrDefault().Id }).AsNoTracking().ToList();
 
                 if (kt == null)
                 {
@@ -1678,7 +1696,24 @@ namespace ECPNPC_API.Controllers
                 throw ex;
             }
         }
-
+        [Route("update_NhomAnh")]
+        [HttpPost]
+        public object update_NhomAnh(UpdateNhomAnhViewModel param)
+        {
+            using (var db = new ECP_PAEntities(GetEntityConnectionString(param.dbname)))
+            {
+                var dky = (from i in db.tblImages
+                           where i.Id == param.ImageId
+                           select i);
+                if (dky == null) return 0;
+                foreach (var i in dky)
+                {
+                    i.GroupId = param.GroupId;
+                }
+                db.SaveChanges();
+                return 1;
+            }
+        }
         [Route("update_commentimg/{id}/{strCmt}/{idNhomAnh}/{dbname}")]
         [HttpGet]
         public object update_commentimg(int id, string strCmt, int idNhomAnh, string dbname)

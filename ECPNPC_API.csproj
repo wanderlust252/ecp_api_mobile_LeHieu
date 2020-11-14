@@ -509,6 +509,7 @@
     <Compile Include="Models\SYS\AccountBindingModels.cs" />
     <Compile Include="Models\SYS\AccountViewModels.cs" />
     <Compile Include="Models\SYS\IdentityModels.cs" />
+    <Compile Include="Models\UpdateNhomAnhViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
