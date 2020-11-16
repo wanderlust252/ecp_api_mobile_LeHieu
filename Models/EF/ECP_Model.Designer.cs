@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\ThanhData\VNITTECH\ECP_NPCV2\ecp-npc-api\ECPNPC_API\Models\EF\ECP_Model.edmx'. 
+﻿// T4 code generation is enabled for model 'H:\PROJECT_DOTNET_C#\projectNghiemTuc\ecp_npc_api_v3\Models\EF\ECP_Model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

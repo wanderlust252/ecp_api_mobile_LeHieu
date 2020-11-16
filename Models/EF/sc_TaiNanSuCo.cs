@@ -19,6 +19,7 @@ namespace ECP_WEBAPI.Models.EF
         {
             this.sc_SuCoPTD = new HashSet<sc_SuCoPTD>();
             this.sc_TaiLieu = new HashSet<sc_TaiLieu>();
+            this.sc_TaiNanSuCo_DonVi = new HashSet<sc_TaiNanSuCo_DonVi>();
         }
     
         public int Id { get; set; }
@@ -52,11 +53,24 @@ namespace ECP_WEBAPI.Models.EF
         public Nullable<decimal> KinhDo { get; set; }
         public Nullable<decimal> ViDo { get; set; }
         public Nullable<bool> IsTaiSan { get; set; }
+        public Nullable<bool> IsChuyenNPC { get; set; }
+        public Nullable<System.DateTime> NgayDuyetNPC { get; set; }
+        public string NguoiDuyetNPC { get; set; }
+        public Nullable<bool> IsMienTru { get; set; }
+        public Nullable<bool> NPCIsDuyetMT { get; set; }
+        public Nullable<System.DateTime> NPCNgayDuyetMT { get; set; }
+        public string NPCNguoiDuyetMT { get; set; }
+        public string NPCTenNguoiDuyetMT { get; set; }
+        public string NPCCommentMT { get; set; }
+        public Nullable<int> KienNghiId { get; set; }
+        public Nullable<bool> IsDuyetKienNghi { get; set; }
     
         public virtual sc_LoaiSuCo sc_LoaiSuCo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<sc_SuCoPTD> sc_SuCoPTD { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<sc_TaiLieu> sc_TaiLieu { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<sc_TaiNanSuCo_DonVi> sc_TaiNanSuCo_DonVi { get; set; }
     }
 }

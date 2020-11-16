@@ -10,6 +10,8 @@
         <EntityTypeShape EntityType="ECP_PHModel.tbl_TaiLieu" Width="1.5" PointX="2.75" PointY="6.75" />
         <EntityTypeShape EntityType="ECP_PHModel.AspNetUser" Width="1.5" PointX="7.625" PointY="1.75" />
         <AssociationConnector Association="ECP_PHModel.FK_AspNetUsers_tbl_Company" />
+        <EntityTypeShape EntityType="ECP_PHModel.AspNetUserRole" Width="1.5" PointX="9.875" PointY="3.5" />
+        <AssociationConnector Association="ECP_PHModel.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

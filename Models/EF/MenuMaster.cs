@@ -28,5 +28,6 @@ namespace ECP_WEBAPI.Models.EF
         public Nullable<bool> IsDisplay { get; set; }
         public string RoleId { get; set; }
         public string Class { get; set; }
+        public Nullable<int> RoleView { get; set; }
     }
 }

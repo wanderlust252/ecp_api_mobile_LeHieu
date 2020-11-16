@@ -248,6 +248,9 @@
     <Compile Include="Context\AspNetUser.cs">
       <DependentUpon>NPC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Context\AspNetUserRole.cs">
+      <DependentUpon>NPC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Context\NPC.Context.cs">
       <DependentUpon>NPC.Context.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -301,10 +304,31 @@
     <Compile Include="Models\EF\Asset.cs">
       <DependentUpon>ECP_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EF\bcbs_ChiTieu.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\bcbs_LichSu.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\bcbs_NoiDung.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\bcbs_TonThat.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\EF\CCDC_TrangThai.cs">
       <DependentUpon>ECP_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EF\chatTinNhan.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\C__MigrationHistory.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\d_LoaiCongViec.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\d_NhomLoaiCongViec.cs">
       <DependentUpon>ECP_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EF\ECP_Model.Context.cs">
@@ -349,10 +373,31 @@
     <Compile Include="Models\EF\NuocSanXuat.cs">
       <DependentUpon>ECP_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EF\pccc_LoaiThietBi.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\pccc_NhomThietBi.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\pccc_SoTheoDoiPCCC.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\pccc_SoTheoDoiPCCC_TaiLieu.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\pccc_ThietBiPCCC.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\pccc_TrangThai.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\EF\PhieuLamViec_Images.cs">
       <DependentUpon>ECP_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EF\PhieuLamViec_Images_His.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\plv_LichSuCapSoPhieu.cs">
       <DependentUpon>ECP_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EF\plv_LoaiPhieu.cs">
@@ -365,6 +410,9 @@
       <DependentUpon>ECP_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EF\plv_PhieuCT_NhanVien.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\plv_SoPhieuHienTai.cs">
       <DependentUpon>ECP_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EF\plv_TaiLieu.cs">
@@ -385,6 +433,18 @@
     <Compile Include="Models\EF\plv_TrangThaiPhieu.cs">
       <DependentUpon>ECP_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EF\sc_ChiTieuSoVuSuCo.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\sc_ChiTieuSuCoTHASauMT.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\sc_KienNghiMienTru.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\sc_KienNghiMienTru_TaiLieu.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\EF\sc_LoaiPhanTu.cs">
       <DependentUpon>ECP_Model.tt</DependentUpon>
     </Compile>
@@ -403,10 +463,16 @@
     <Compile Include="Models\EF\sc_TaiNanSuCo.cs">
       <DependentUpon>ECP_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EF\sc_TaiNanSuCo_DonVi.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\EF\SoTheoDoiCCDCAT.cs">
       <DependentUpon>ECP_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EF\SoTheoDoiCCDCAT_TaiLieu.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\sysdiagram.cs">
       <DependentUpon>ECP_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EF\SystemConfig.cs">
@@ -496,13 +562,46 @@
     <Compile Include="Models\EF\tblTagImageUser.cs">
       <DependentUpon>ECP_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EF\tblTram.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\EF\tblVaiTroPhienLamViec.cs">
       <DependentUpon>ECP_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EF\tbl_NhanVien_PhienLamViec.cs">
       <DependentUpon>ECP_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EF\tbnn_LoaiThietBi.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\tbnn_NhomThietBi.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\tbnn_SoTheoDoiTBNN.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\tbnn_SoTheoDoiTBNN_TaiLieu.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\tbnn_ThietBiNghiemNgat.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\tbnn_TrangThai.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\Test.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\EF\ThietBiATLD.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\vs_DanhMucLoaiVeSinh.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\vs_KyBaoCao.cs">
+      <DependentUpon>ECP_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\vs_NoiDungVeSinh.cs">
       <DependentUpon>ECP_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KhachHang.cs" />

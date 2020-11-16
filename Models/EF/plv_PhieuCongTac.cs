@@ -31,7 +31,7 @@ namespace ECP_WEBAPI.Models.EF
         public string NguoiTao { get; set; }
         public Nullable<System.DateTime> NgayCN { get; set; }
         public string NguoiCN { get; set; }
-        public Nullable<int> NguoiDuyet { get; set; }
+        public string NguoiDuyet { get; set; }
         public Nullable<System.DateTime> NgayDuyet { get; set; }
         public string DieuKienAnToan { get; set; }
         public string DonViLienQuanQLVH { get; set; }
@@ -56,6 +56,21 @@ namespace ECP_WEBAPI.Models.EF
         public Nullable<bool> NGUOICP_B6 { get; set; }
         public Nullable<System.DateTime> NgayGioKT_B6 { get; set; }
         public Nullable<bool> NguoiTaoKT_B6 { get; set; }
+        public Nullable<int> TrangThaiChuyen { get; set; }
+        public string DonViId { get; set; }
+        public Nullable<int> SoNguoiThamGia { get; set; }
+        public string NguoiCapPhieu { get; set; }
+        public string NguoiCapPhieu_Id { get; set; }
+        public Nullable<int> SoPhieuLenhInt { get; set; }
+        public Nullable<bool> IsChuyenNPC { get; set; }
+        public Nullable<System.DateTime> NgayDuyetNPC { get; set; }
+        public string NguoiDuyetNPC { get; set; }
+        public string TenDonVi_LCT { get; set; }
+        public Nullable<int> PhongBanID_PCT { get; set; }
+        public string PhongBan_PCT { get; set; }
+        public Nullable<int> LoaiCongViecId { get; set; }
+        public string MaYeuCauCRM { get; set; }
+        public Nullable<int> TramId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhieuLamViec_Images> PhieuLamViec_Images { get; set; }

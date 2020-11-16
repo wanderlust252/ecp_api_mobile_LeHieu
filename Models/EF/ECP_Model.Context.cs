@@ -25,19 +25,25 @@ namespace ECP_WEBAPI.Models.EF
         {
         }
 
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<Asset> Assets { get; set; }
+        public virtual DbSet<bcbs_ChiTieu> bcbs_ChiTieu { get; set; }
+        public virtual DbSet<bcbs_LichSu> bcbs_LichSu { get; set; }
+        public virtual DbSet<bcbs_NoiDung> bcbs_NoiDung { get; set; }
+        public virtual DbSet<bcbs_TonThat> bcbs_TonThat { get; set; }
         public virtual DbSet<CCDC_TrangThai> CCDC_TrangThai { get; set; }
         public virtual DbSet<chatTinNhan> chatTinNhans { get; set; }
+        public virtual DbSet<d_LoaiCongViec> d_LoaiCongViec { get; set; }
+        public virtual DbSet<d_NhomLoaiCongViec> d_NhomLoaiCongViec { get; set; }
         public virtual DbSet<HangSanXuat> HangSanXuats { get; set; }
         public virtual DbSet<KiemSoatDienThoai> KiemSoatDienThoais { get; set; }
         public virtual DbSet<LoaiThietBi> LoaiThietBis { get; set; }
@@ -46,12 +52,20 @@ namespace ECP_WEBAPI.Models.EF
         public virtual DbSet<Message> Messages { get; set; }
         public virtual DbSet<NhomThietBi> NhomThietBis { get; set; }
         public virtual DbSet<NuocSanXuat> NuocSanXuats { get; set; }
+        public virtual DbSet<pccc_LoaiThietBi> pccc_LoaiThietBi { get; set; }
+        public virtual DbSet<pccc_NhomThietBi> pccc_NhomThietBi { get; set; }
+        public virtual DbSet<pccc_SoTheoDoiPCCC> pccc_SoTheoDoiPCCC { get; set; }
+        public virtual DbSet<pccc_SoTheoDoiPCCC_TaiLieu> pccc_SoTheoDoiPCCC_TaiLieu { get; set; }
+        public virtual DbSet<pccc_ThietBiPCCC> pccc_ThietBiPCCC { get; set; }
+        public virtual DbSet<pccc_TrangThai> pccc_TrangThai { get; set; }
         public virtual DbSet<PhieuLamViec_Images> PhieuLamViec_Images { get; set; }
         public virtual DbSet<PhieuLamViec_Images_His> PhieuLamViec_Images_His { get; set; }
+        public virtual DbSet<plv_LichSuCapSoPhieu> plv_LichSuCapSoPhieu { get; set; }
         public virtual DbSet<plv_LoaiPhieu> plv_LoaiPhieu { get; set; }
         public virtual DbSet<plv_PhieuCongTac> plv_PhieuCongTac { get; set; }
         public virtual DbSet<plv_PhieuCongTac_His> plv_PhieuCongTac_His { get; set; }
         public virtual DbSet<plv_PhieuCT_NhanVien> plv_PhieuCT_NhanVien { get; set; }
+        public virtual DbSet<plv_SoPhieuHienTai> plv_SoPhieuHienTai { get; set; }
         public virtual DbSet<plv_TaiLieu> plv_TaiLieu { get; set; }
         public virtual DbSet<plv_TaiLieu_His> plv_TaiLieu_His { get; set; }
         public virtual DbSet<plv_ThuocTinhPhien> plv_ThuocTinhPhien { get; set; }
@@ -59,14 +73,20 @@ namespace ECP_WEBAPI.Models.EF
         public virtual DbSet<plv_TrangThaiPhien> plv_TrangThaiPhien { get; set; }
         public virtual DbSet<plv_TrangThaiPhieu> plv_TrangThaiPhieu { get; set; }
         public virtual DbSet<S_THANG_LVIEC> S_THANG_LVIEC { get; set; }
+        public virtual DbSet<sc_ChiTieuSoVuSuCo> sc_ChiTieuSoVuSuCo { get; set; }
+        public virtual DbSet<sc_ChiTieuSuCoTHASauMT> sc_ChiTieuSuCoTHASauMT { get; set; }
+        public virtual DbSet<sc_KienNghiMienTru> sc_KienNghiMienTru { get; set; }
+        public virtual DbSet<sc_KienNghiMienTru_TaiLieu> sc_KienNghiMienTru_TaiLieu { get; set; }
         public virtual DbSet<sc_LoaiPhanTu> sc_LoaiPhanTu { get; set; }
         public virtual DbSet<sc_LoaiSuCo> sc_LoaiSuCo { get; set; }
         public virtual DbSet<sc_PhanTuDien> sc_PhanTuDien { get; set; }
         public virtual DbSet<sc_SuCoPTD> sc_SuCoPTD { get; set; }
         public virtual DbSet<sc_TaiLieu> sc_TaiLieu { get; set; }
         public virtual DbSet<sc_TaiNanSuCo> sc_TaiNanSuCo { get; set; }
+        public virtual DbSet<sc_TaiNanSuCo_DonVi> sc_TaiNanSuCo_DonVi { get; set; }
         public virtual DbSet<SoTheoDoiCCDCAT> SoTheoDoiCCDCATs { get; set; }
         public virtual DbSet<SoTheoDoiCCDCAT_TaiLieu> SoTheoDoiCCDCAT_TaiLieu { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<SystemConfig> SystemConfigs { get; set; }
         public virtual DbSet<tbl_NhanVien_PhienLamViec> tbl_NhanVien_PhienLamViec { get; set; }
         public virtual DbSet<tblBaoCao> tblBaoCaos { get; set; }
@@ -78,6 +98,7 @@ namespace ECP_WEBAPI.Models.EF
         public virtual DbSet<tblComment_His> tblComment_His { get; set; }
         public virtual DbSet<tblComment_Image> tblComment_Image { get; set; }
         public virtual DbSet<tblComment_Image_His> tblComment_Image_His { get; set; }
+        public virtual DbSet<tblDevice> tblDevices { get; set; }
         public virtual DbSet<tblDonVi> tblDonVis { get; set; }
         public virtual DbSet<tblGroupImage> tblGroupImages { get; set; }
         public virtual DbSet<tblImage> tblImages { get; set; }
@@ -95,9 +116,19 @@ namespace ECP_WEBAPI.Models.EF
         public virtual DbSet<tblPhongBan> tblPhongBans { get; set; }
         public virtual DbSet<tblTagImageUser> tblTagImageUsers { get; set; }
         public virtual DbSet<tblTag> tblTags { get; set; }
+        public virtual DbSet<tblTram> tblTrams { get; set; }
         public virtual DbSet<tblVaiTroPhienLamViec> tblVaiTroPhienLamViecs { get; set; }
+        public virtual DbSet<tbnn_LoaiThietBi> tbnn_LoaiThietBi { get; set; }
+        public virtual DbSet<tbnn_NhomThietBi> tbnn_NhomThietBi { get; set; }
+        public virtual DbSet<tbnn_SoTheoDoiTBNN> tbnn_SoTheoDoiTBNN { get; set; }
+        public virtual DbSet<tbnn_SoTheoDoiTBNN_TaiLieu> tbnn_SoTheoDoiTBNN_TaiLieu { get; set; }
+        public virtual DbSet<tbnn_ThietBiNghiemNgat> tbnn_ThietBiNghiemNgat { get; set; }
+        public virtual DbSet<tbnn_TrangThai> tbnn_TrangThai { get; set; }
+        public virtual DbSet<Test> Tests { get; set; }
         public virtual DbSet<ThietBiATLD> ThietBiATLDs { get; set; }
+        public virtual DbSet<vs_DanhMucLoaiVeSinh> vs_DanhMucLoaiVeSinh { get; set; }
+        public virtual DbSet<vs_KyBaoCao> vs_KyBaoCao { get; set; }
+        public virtual DbSet<vs_NoiDungVeSinh> vs_NoiDungVeSinh { get; set; }
         public virtual DbSet<FacilitySite> FacilitySites { get; set; }
-        public virtual DbSet<tblDevice> tblDevices { get; set; }
     }
 }

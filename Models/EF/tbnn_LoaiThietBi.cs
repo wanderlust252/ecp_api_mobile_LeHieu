@@ -12,30 +12,22 @@ namespace ECP_WEBAPI.Models.EF
     using System;
     using System.Collections.Generic;
     
-    public partial class tblPhongBan
+    public partial class tbnn_LoaiThietBi
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblPhongBan()
+        public tbnn_LoaiThietBi()
         {
-            this.tblNhanViens = new HashSet<tblNhanVien>();
             this.tbnn_ThietBiNghiemNgat = new HashSet<tbnn_ThietBiNghiemNgat>();
-            this.ThietBiATLDs = new HashSet<ThietBiATLD>();
         }
     
-        public int Id { get; set; }
-        public string TenPhongBan { get; set; }
-        public string MoTa { get; set; }
-        public string MaDVi { get; set; }
-        public string TenVietTat { get; set; }
-        public string SDT { get; set; }
-        public Nullable<int> LoaiPB { get; set; }
+        public int ID { get; set; }
+        public string TenLoai { get; set; }
+        public Nullable<System.DateTime> NgayTao { get; set; }
+        public string NguoiTao { get; set; }
+        public Nullable<System.DateTime> NgaySua { get; set; }
+        public string NguoiSua { get; set; }
     
-        public virtual tblDonVi tblDonVi { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblNhanVien> tblNhanViens { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbnn_ThietBiNghiemNgat> tbnn_ThietBiNghiemNgat { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThietBiATLD> ThietBiATLDs { get; set; }
     }
 }

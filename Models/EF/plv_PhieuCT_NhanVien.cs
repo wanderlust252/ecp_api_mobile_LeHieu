@@ -14,12 +14,15 @@ namespace ECP_WEBAPI.Models.EF
     
     public partial class plv_PhieuCT_NhanVien
     {
+        public int Id { get; set; }
         public int MaPCT { get; set; }
+        public string TenNV { get; set; }
         public string MaNV { get; set; }
         public Nullable<System.DateTime> ThoiGianDen { get; set; }
         public Nullable<System.DateTime> ThoiGianRut { get; set; }
         public Nullable<bool> IsDen { get; set; }
         public Nullable<bool> IsRut { get; set; }
+        public string BacAnToan { get; set; }
     
         public virtual plv_PhieuCongTac plv_PhieuCongTac { get; set; }
         public virtual tblNhanVien tblNhanVien { get; set; }

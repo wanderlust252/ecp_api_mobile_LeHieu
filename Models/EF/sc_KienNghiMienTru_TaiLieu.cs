@@ -7,23 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ECP_WEBAPI.Context
+namespace ECP_WEBAPI.Models.EF
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class tbl_TaiLieu
+    public partial class sc_KienNghiMienTru_TaiLieu
     {
         public int Id { get; set; }
-        public string TenTaiLieu { get; set; }
+        public int TypeObj { get; set; }
         public string Url { get; set; }
+        public string Description { get; set; }
         public Nullable<System.DateTime> NgayTao { get; set; }
         public string NguoiTao { get; set; }
-        public Nullable<System.DateTime> NgayCapNhat { get; set; }
-        public string NguoiCapNhat { get; set; }
-        public string MA_DVIQLY { get; set; }
-        public Nullable<int> LoaiTaiLieu { get; set; }
-        public Nullable<bool> IsDelete { get; set; }
-        public Nullable<bool> IsPublic { get; set; }
+        public Nullable<System.DateTime> NgaySua { get; set; }
+        public string NguoiSua { get; set; }
+        public Nullable<int> KienNghiId { get; set; }
+    
+        public virtual sc_KienNghiMienTru sc_KienNghiMienTru { get; set; }
     }
 }

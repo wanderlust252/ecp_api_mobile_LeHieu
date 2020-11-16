@@ -18,6 +18,8 @@ namespace ECP_WEBAPI.Models.EF
         public NuocSanXuat()
         {
             this.LoaiThietBis = new HashSet<LoaiThietBi>();
+            this.pccc_LoaiThietBi = new HashSet<pccc_LoaiThietBi>();
+            this.pccc_ThietBiPCCC = new HashSet<pccc_ThietBiPCCC>();
             this.ThietBiATLDs = new HashSet<ThietBiATLD>();
         }
     
@@ -26,6 +28,10 @@ namespace ECP_WEBAPI.Models.EF
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LoaiThietBi> LoaiThietBis { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<pccc_LoaiThietBi> pccc_LoaiThietBi { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<pccc_ThietBiPCCC> pccc_ThietBiPCCC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ThietBiATLD> ThietBiATLDs { get; set; }
     }

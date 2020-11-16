@@ -49,5 +49,6 @@ namespace ECP_WEBAPI.Models.EF
         public string NguoiDuyetNPC { get; set; }
         public Nullable<System.DateTime> NgayKetThuc { get; set; }
         public Nullable<long> PhienLamViecId { get; set; }
+        public Nullable<int> PhongBanIDCreate { get; set; }
     }
 }

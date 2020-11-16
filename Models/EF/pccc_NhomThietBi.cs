@@ -12,27 +12,21 @@ namespace ECP_WEBAPI.Models.EF
     using System;
     using System.Collections.Generic;
     
-    public partial class HangSanXuat
+    public partial class pccc_NhomThietBi
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public HangSanXuat()
+        public pccc_NhomThietBi()
         {
-            this.LoaiThietBis = new HashSet<LoaiThietBi>();
             this.pccc_LoaiThietBi = new HashSet<pccc_LoaiThietBi>();
             this.pccc_ThietBiPCCC = new HashSet<pccc_ThietBiPCCC>();
-            this.ThietBiATLDs = new HashSet<ThietBiATLD>();
         }
     
         public int ID { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LoaiThietBi> LoaiThietBis { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<pccc_LoaiThietBi> pccc_LoaiThietBi { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<pccc_ThietBiPCCC> pccc_ThietBiPCCC { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThietBiATLD> ThietBiATLDs { get; set; }
     }
 }

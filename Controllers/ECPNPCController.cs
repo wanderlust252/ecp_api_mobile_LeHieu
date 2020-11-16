@@ -1,4 +1,5 @@
-﻿using ECP_WEBAPI.Context;
+﻿using Dapper;
+using ECP_WEBAPI.Context;
 using ECP_WEBAPI.Models;
 using ECP_WEBAPI.Models.EF;
 using ECPNPC_API.Helper;
@@ -9,6 +10,7 @@ using OneSignal.CSharp.SDK.Resources;
 using OneSignal.CSharp.SDK.Resources.Notifications;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Core.EntityClient;
 using System.Data.SqlClient;
@@ -22,6 +24,7 @@ using System.Net;
 using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.Results;
@@ -73,14 +76,17 @@ namespace ECPNPC_API.Controllers
             return "DBNotFound";
         }
 
-        public string GetEntityConnectionString(string connectionString)
+        public string GetEntityConnectionString(string connectionString,int optionDapper=0)
         {
             var entityBuilder = new EntityConnectionStringBuilder();
             //data source = DESKTOP - FSCTC81\SQLEXPRESS; initial catalog = ECP_PA04; integrated security = False; persist security info = True; user id = sa; password = 123456
             entityBuilder.Provider = "System.Data.SqlClient";
             entityBuilder.ProviderConnectionString = GetConnectString(connectionString) + ";MultipleActiveResultSets=True;App=EntityFramework;";
             entityBuilder.Metadata = @"res://*/Models.EF.ECP_Model.csdl|res://*/Models.EF.ECP_Model.ssdl|res://*/Models.EF.ECP_Model.msl";
-
+            if (optionDapper == 1)
+            {
+                return entityBuilder.ProviderConnectionString;
+            }
             return entityBuilder.ToString();
         }
 
@@ -984,7 +990,8 @@ namespace ECPNPC_API.Controllers
                       ).AsNoTracking().ToList();
                 return kt;
             }
-        }
+        } 
+         
 
         [HttpGet]
         public Object GetInforUserNPC(string username)
@@ -1097,7 +1104,20 @@ namespace ECPNPC_API.Controllers
                 return kt;
             }
         }
+        [Route("GetInfoAdminForgotPassword")]//em dang lam api nay
+        [HttpGet]
+        public async Task<object> GetInfoAdminForgotPassword(string role, string dbname)
+        {
+            using (IDbConnection db = new SqlConnection(GetEntityConnectionString(dbname,1)))
+            {
+                string pban;
+                pban = @"SELECT distinct b.TenNhanVien,b.SoDT,b.Email
+                      FROM  [AspNetUserRoles] a join [tblNhanVien] b on a.UserId=b.Id
+                      where a.roleid in ('1','17') and DonViId=@role";
+                return (await db.QueryAsync<object>(pban, new { role })).ToList();
 
+            }
+        }
         [Route("ListNVByRoleID/{iduser}/{donviid}/{dbname}")]
         [HttpGet]
         public Object ListNVByRoleID(string iduser, string donviid, string dbname)

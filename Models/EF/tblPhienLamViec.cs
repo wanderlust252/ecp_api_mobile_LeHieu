@@ -21,7 +21,7 @@ namespace ECP_WEBAPI.Models.EF
             this.tblPhienLamViec_TheoDoi = new HashSet<tblPhienLamViec_TheoDoi>();
             this.tblPhienLamViec_ThuocTinh = new HashSet<tblPhienLamViec_ThuocTinh>();
         }
-    
+        public string dbname { get; set; }
         public int Id { get; set; }
         public int PhongBanID { get; set; }
         public string NoiDung { get; set; }
@@ -62,8 +62,13 @@ namespace ECP_WEBAPI.Models.EF
         public Nullable<decimal> ViDo { get; set; }
         public string NguoiKetThuc { get; set; }
         public Nullable<bool> IsEndByWeb { get; set; }
-        public string dbname { get; set; }
-
+        public string LanhDaoCongViec { get; set; }
+        public string LanhDaoCongViec_Id { get; set; }
+        public string NguoiCapPhieu { get; set; }
+        public string NguoiCapPhieu_Id { get; set; }
+        public Nullable<int> PhongBanIDCreate { get; set; }
+        public string DieuKienAnToan { get; set; }
+    
         public virtual plv_TinhChatPhien plv_TinhChatPhien { get; set; }
         public virtual plv_TrangThaiPhien plv_TrangThaiPhien { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

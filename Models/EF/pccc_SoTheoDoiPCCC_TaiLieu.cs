@@ -7,23 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ECP_WEBAPI.Context
+namespace ECP_WEBAPI.Models.EF
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class tbl_TaiLieu
+    public partial class pccc_SoTheoDoiPCCC_TaiLieu
     {
-        public int Id { get; set; }
-        public string TenTaiLieu { get; set; }
-        public string Url { get; set; }
+        public int ID { get; set; }
+        public string Ten { get; set; }
+        public string Kieu { get; set; }
+        public string URL { get; set; }
+        public Nullable<int> MaSo { get; set; }
         public Nullable<System.DateTime> NgayTao { get; set; }
         public string NguoiTao { get; set; }
-        public Nullable<System.DateTime> NgayCapNhat { get; set; }
-        public string NguoiCapNhat { get; set; }
-        public string MA_DVIQLY { get; set; }
-        public Nullable<int> LoaiTaiLieu { get; set; }
-        public Nullable<bool> IsDelete { get; set; }
-        public Nullable<bool> IsPublic { get; set; }
+        public Nullable<System.DateTime> NgaySua { get; set; }
+        public string NguoiSua { get; set; }
+    
+        public virtual pccc_SoTheoDoiPCCC pccc_SoTheoDoiPCCC { get; set; }
     }
 }
