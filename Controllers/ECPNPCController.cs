@@ -839,7 +839,96 @@ namespace ECPNPC_API.Controllers
                 }
             }
         }
-
+        [Route("GetLichSuPhienByTrangThai")]
+        [System.Web.Mvc.HttpGet]
+        public object GetLichSuPhienByTrangThai(int idphong, string iddvi, int idrole, string tungay, string denngay, string userid,int trangThai, string dbname, int page = 0, int pageSize = 500)
+        //(int idphong, string iddvi, int idrole, string tungay, string denngay, int tcphien, string userid)
+        {
+            using (var db = new ECP_PAEntities(GetEntityConnectionString(dbname)))
+            {
+                DateTime dtungay = DateTime.ParseExact(tungay, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+                DateTime ddennngay = DateTime.ParseExact(denngay, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+                if (idrole < 4) // cap quan ly
+                {
+                    // if (idphong == -1) // id phong null, quan ly cap don vi, lay tat ca phien lam viec cua cac phong ban         
+                    // {
+                    var kq = (from i in db.tblPhienLamViecs
+                              from j in db.tblPhongBans
+                              where j.MaDVi == iddvi
+                                 && i.PhongBanID == j.Id
+                                 && (idphong == -1 || i.PhongBanID == idphong)
+                                 && (tungay == "01-01-1990" || i.NgayLamViec >= dtungay)
+                                 && (denngay == "01-01-1990" || i.NgayLamViec <= ddennngay)
+                                 && i.TrangThai == trangThai
+                              orderby i.Id descending
+                              select new
+                              {
+                                  i.DiaDiem,
+                                  i.GiamSatVien,
+                                  i.GioBd,
+                                  i.GioKt,
+                                  i.Id,
+                                  i.LanhDaoTrucBan,
+                                  i.NgayDuyet,
+                                  i.NgayLamViec,
+                                  i.NgaySua,
+                                  i.NgayTao,
+                                  i.NguoiChiHuy,
+                                  i.NguoiDuyet,
+                                  i.NguoiDuyet_SoPa,
+                                  i.NguoiKiemSoat,
+                                  i.NguoiKiemTraPhieu,
+                                  i.NguoiSua,
+                                  i.NguoiTao,
+                                  i.NoiDung,
+                                  i.PhongBanID,
+                                  i.TrangThai,
+                                  i.KinhDo,
+                                  i.ViDo
+                              }).Distinct().OrderByDescending(c => c.NgayLamViec).ThenBy(c => c.GioBd).Skip(page * pageSize).Take(pageSize).AsNoTracking().ToList();
+                    return kq;
+                    // }
+                }
+                else
+                { // lay thong tin theo 1 phong
+                    var kq = (from i in db.tblPhienLamViecs
+                              from x in db.tbl_NhanVien_PhienLamViec
+                              where // i.PhongBanID == idphong &&
+                              i.Id == x.PhienLamViecId
+                                 && (userid == "-1" || x.NhanVienId == userid)
+                                 && (tungay == "01-01-1990" || i.NgayLamViec >= dtungay)
+                                 && (denngay == "01-01-1990" || i.NgayLamViec <= ddennngay)
+                                 && i.TrangThai == trangThai
+                              orderby i.Id descending
+                              select new
+                              {
+                                  i.DiaDiem,
+                                  i.GiamSatVien,
+                                  i.GioBd,
+                                  i.GioKt,
+                                  i.Id,
+                                  i.LanhDaoTrucBan,
+                                  i.NgayDuyet,
+                                  i.NgayLamViec,
+                                  i.NgaySua,
+                                  i.NgayTao,
+                                  i.NguoiChiHuy,
+                                  i.NguoiDuyet,
+                                  i.NguoiDuyet_SoPa,
+                                  i.NguoiKiemSoat,
+                                  i.NguoiKiemTraPhieu,
+                                  i.NguoiSua,
+                                  i.NguoiTao,
+                                  i.NoiDung,
+                                  i.PhongBanID,
+                                  i.TrangThai,
+                                  i.KinhDo,
+                                  i.ViDo
+                              }).Distinct().OrderByDescending(c => c.NgayLamViec).ThenBy(c => c.GioBd).Skip(page * pageSize).Take(pageSize).AsNoTracking().ToList();
+                    return kq;
+                }
+            }
+        }
         [Route("GetNhanVien_PhienLV")]
         [System.Web.Mvc.HttpGet]
         public object GetNhanVien_PhienLV(string iddvi, string userid, int page = 0, int pageSize = 500)
@@ -1111,7 +1200,7 @@ namespace ECPNPC_API.Controllers
             using (IDbConnection db = new SqlConnection(GetEntityConnectionString(dbname,1)))
             {
                 string pban;
-                pban = @"SELECT distinct b.TenNhanVien,b.SoDT,b.Email
+                pban = @"SELECT distinct b.Id,b.TenNhanVien,b.SoDT,b.Email
                       FROM  [AspNetUserRoles] a join [tblNhanVien] b on a.UserId=b.Id
                       where a.roleid in ('1','17') and DonViId=@role";
                 return (await db.QueryAsync<object>(pban, new { role })).ToList();
