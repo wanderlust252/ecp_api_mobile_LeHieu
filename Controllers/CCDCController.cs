@@ -8,6 +8,7 @@ using System.Data.Entity.Core.EntityClient;
 using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http; 
 
@@ -67,7 +68,33 @@ namespace ECP_WEBAPI.Controllers
 
             return entityBuilder.ToString();
         }
+        [Route("SoKiemDinh")]
+        [HttpGet]
+        public async Task<object> getListSoKiemDinh( string CongCuId, string dbname)
+        { 
 
+
+            /*
+             1. Hết hạn
+             2. 15 ngày
+             3. 30 ngày
+             4. Chưa đến hạn
+            */
+
+            List<CongCuDungCuAnToanModel> lstData = new List<CongCuDungCuAnToanModel>();
+            try
+            {
+
+                using (SqlConnection db = new SqlConnection(GetConnectString(dbname)))
+                {
+                    string query = @"select * from SoTheoDoiCCDCAT where MaTB= @CongCuId" ;
+                        
+                    return (await db.QueryAsync<object>(query, new { CongCuId })).ToList();
+                }
+            }
+            catch (Exception ex) { }
+            return lstData;
+        }
         [Route("CCDC/{page}/{pageSize}/{filter}/{DonViId}/{PhongBanId}/{TrangThai}/{MaLoai}/{TrangThaiKiemDinh}/{MaNhom}/{MaTT}/{dbname}")]
         [HttpGet]
         public object getListCongCu(int page, int pageSize, string filter,
