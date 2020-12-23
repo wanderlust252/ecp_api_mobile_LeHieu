@@ -95,7 +95,7 @@ namespace ECP_WEBAPI.Controllers
             catch (Exception ex) { }
             return lstData;
         }
-        [Route("CCDC/{page}/{pageSize}/{filter}/{DonViId}/{PhongBanId}/{TrangThai}/{MaLoai}/{TrangThaiKiemDinh}/{MaNhom}/{MaTT}/{dbname}")]
+        [Route("CCDC")]
         [HttpGet]
         public object getListCongCu(int page, int pageSize, string filter,
             string DonViId, string PhongBanId, string TrangThai, string MaLoai, string TrangThaiKiemDinh, string MaNhom, string MaTT,string dbname)
