@@ -281,6 +281,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PhienLamViecController.cs" />
     <Compile Include="Controllers\PublishController.cs" />
+    <Compile Include="Controllers\QLSuCoController.cs" />
     <Compile Include="Controllers\TaiLieuController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -605,6 +606,8 @@
       <DependentUpon>ECP_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KhachHang.cs" />
+    <Compile Include="Models\sc_KienNghiMienTruModel.cs" />
+    <Compile Include="Models\sc_KienNghiMienTru_TaiLieuModel.cs" />
     <Compile Include="Models\SYS\AccountBindingModels.cs" />
     <Compile Include="Models\SYS\AccountViewModels.cs" />
     <Compile Include="Models\SYS\IdentityModels.cs" />
@@ -729,6 +732,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\CCDC\" />
+    <Folder Include="Views\QLSuCo\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Project_Readme.html" />
