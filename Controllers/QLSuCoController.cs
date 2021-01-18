@@ -286,7 +286,26 @@ namespace ECP_WEBAPI.Controllers
             catch (Exception ex) { }
             return new List<object>() { };
         }
-    
+        [Route("GetImageAndBienBanSuCoBySuCoId")]
+        [HttpGet]
+        public async Task<object> GetImageAndBienBanSuCoBySuCoId(string suCoId,string dbname)
+        {
+            try
+            {
+                using (SqlConnection db = new SqlConnection(GetConnectString(dbname)))
+                {
+                    string query = @"SELECT * FROM [sc_TaiLieu] where  SuCoId=@suCoId";
+                    List<object> lst = (await db.QueryAsync<object>(query,
+                    new
+                    {
+                        suCoId
+                    })).ToList();
+                    return lst;
+                }
+            }
+            catch (Exception ex) { }
+            return new List<object>() { };
+        }
 
         [Route("GetListSuCo")]
         [HttpGet]
@@ -362,6 +381,8 @@ namespace ECP_WEBAPI.Controllers
                         ",NguyenNhan =(select TenLoaiSuCo from sc_LoaiSuCo where Id = a.NguyenNhanId) " +
                         ",TinhChat =(select TenLoaiSuCo from sc_LoaiSuCo where Id = a.TinhChatId) " +
                         ",TenDvi =(select TenDonVi from tblDonVi where Id = a.DonViId) " +
+                        ",NT_HOTEN =(SELECT TenNhanVien FROM [tblNhanVien] where Username= a.NguoiTao) " +
+                        ",NT_SDT =(SELECT SoDT FROM [tblNhanVien] where Username= a.NguoiTao) " +
                         ",a.TrangThai, a.NgayDuyet, a.NguoiDuyet, a.NgaySua, a.NguoiSua, a.TenThietBi,a.DienBienSuCo,a.IsGianDoan, a.IsTaiSan " +
                         ",TrangThaiNhap=case when DATEDIFF(hour, a.ThoiGianXuatHien, a.NgayTao)>24 then N'Trễ' else N'' end " +
                         ",a.IsChuyenNPC,a.NgayDuyetNPC,a.NguoiDuyetNPC, a.IsMienTru " +
@@ -524,6 +545,8 @@ public class SuCoModel
     public string TenThietBi { get; set; }
     public string DienBienSuCo { get; set; }
     public string TomTat { get; set; }
+    public string NT_HOTEN { get; set; }
+    public string NT_SDT { get; set; }
     public Nullable<bool> TinhTrangBienBan { get; set; }
     public Nullable<bool> HinhAnhSuCo { get; set; }
     public Nullable<System.DateTime> ThoiGianXuatHien { get; set; }
