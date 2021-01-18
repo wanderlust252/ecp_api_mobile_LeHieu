@@ -7,6 +7,7 @@ using System.Data.Entity.Core.EntityClient;
 using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http; 
 
@@ -265,6 +266,27 @@ namespace ECP_WEBAPI.Controllers
             catch (Exception ex) { }
             return count;
         }
+        [Route("GetFilterQlSuCo")]
+        [HttpGet]
+        public async Task<object> GetFilterQlSuCo( string dbname)
+        { 
+            try
+            {
+                using (SqlConnection db = new SqlConnection(GetConnectString(dbname)))
+                {
+                    string query = @"SELECT * FROM [sc_LoaiSuCo] order by [TypeOfLSC]";
+                    List<QuanLySuCoFilterViewModel> lst = (await db.QueryAsync<QuanLySuCoFilterViewModel>(query,
+                    new
+                    {
+                        
+                    })).ToList();
+                    return lst;
+                }
+            }
+            catch (Exception ex) { }
+            return new List<object>() { };
+        }
+    
 
         [Route("GetListSuCo")]
         [HttpGet]

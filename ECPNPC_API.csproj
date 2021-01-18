@@ -606,6 +606,7 @@
       <DependentUpon>ECP_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KhachHang.cs" />
+    <Compile Include="Models\QuanLySuCoFilterViewModel.cs" />
     <Compile Include="Models\sc_KienNghiMienTruModel.cs" />
     <Compile Include="Models\sc_KienNghiMienTru_TaiLieuModel.cs" />
     <Compile Include="Models\SYS\AccountBindingModels.cs" />
